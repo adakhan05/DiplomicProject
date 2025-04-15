@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>JobSearch - Поиск работы</title>
+    <style>
+      body {
+        background-color: #1a202c;
+        color: white;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+      }
+
+      #app-loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #1a202c;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top-color: #10b981;
+        border-radius: 50%;
+        animation: spin 3s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .app-ready #app-loading {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      html,
+      body,
+      #app {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app-loading">
+      <div class="spinner"></div>
+    </div>
+
+    <div id="app"></div>
+
+    <script type="module" src="/src/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("DOM Content Loaded");
+      });
+
+      window.appReady = function () {
+        console.log("App Ready");
+        document.body.classList.add("app-ready");
+
+        setTimeout(function () {
+          var loader = document.getElementById("app-loading");
+          if (loader && loader.parentNode) {
+            loader.parentNode.removeChild(loader);
+          }
+        }, 300);
+      };
+
+      setTimeout(function () {
+        window.appReady();
+      }, 5000);
+    </script>
+  </body>
+</html>
