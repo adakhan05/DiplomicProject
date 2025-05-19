@@ -63,7 +63,6 @@ cd project
 
 pip install -r requirements.txt
 
-# Создание .env файла
 
 # Применение миграций
 
