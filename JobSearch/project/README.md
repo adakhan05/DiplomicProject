@@ -59,6 +59,8 @@ source venv/bin/activate
 # Установка зависимостей
 
 cd project
+
+
 pip install -r requirements.txt
 
 # Создание .env файла
@@ -76,6 +78,8 @@ python manage.py runserver
 # В директории project/
 
 npm install
+
+
 npm run dev
 
 ### Доступ к приложению
