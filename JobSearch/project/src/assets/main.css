@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50;
+  }
+
+  /* Улучшаем отображение на мобильных устройствах */
+  html,
+  body {
+    @apply overflow-x-hidden;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+
+  .btn-outline {
+    @apply border border-gray-300 hover:bg-gray-100;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+
+  .bookmark-icon {
+    @apply transition-colors duration-200;
+  }
+
+  .bookmark-icon-saved {
+    @apply text-red-500;
+  }
+
+  .bookmark-icon-unsaved {
+    @apply text-gray-500;
+  }
+
+  /* Адаптивные стили для мобильных устройств */
+  @media (max-width: 767px) {
+    .container {
+      @apply px-2;
+    }
+
+    /* Центрирование кнопок на мобильных устройствах */
+    .button-container {
+      @apply flex justify-center;
+    }
+
+    /* Улучшенное отображение форм */
+    .form-group {
+      @apply mb-4;
+    }
+
+    /* Исправление проблем с прокруткой */
+    .overflow-container {
+      @apply overflow-x-hidden;
+    }
+  }
+}
