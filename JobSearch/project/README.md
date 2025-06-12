@@ -61,14 +61,6 @@ source venv/bin/activate
 cd project
 pip install -r requirements.txt
 
-# Создание .env файла
-
-# Создайте файл .env в директории project/ со следующим содержимым:
-
-SECRET_KEY=ключ
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
-
 # Применение миграций
 
 python manage.py migrate
