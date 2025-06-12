@@ -74,6 +74,8 @@ python manage.py runserver
 # В директории project/
 
 npm install
+
+
 npm run dev
 
 ### Доступ к приложению
